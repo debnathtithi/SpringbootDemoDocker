@@ -1,0 +1,12 @@
+apiVersion: v1 
+kind: Service
+metadata:
+  name: demo-docker-service
+spec:
+  selector:
+    app: demo-docker
+  ports:
+    - protocol: TCP
+      port: 8000 # port that the service is running on in the cluster
+      targetPort: 8080 # port exposed by the service
+  type: LoadBalancer
